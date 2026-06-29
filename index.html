@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURBON - Premium Padel Rackets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>AURBON</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Rackets</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="badge">New Release 2026</span>
+                    <h1 class="hero-title">
+                        <span class="title-line">Elevate Your</span>
+                        <span class="title-line gradient-text">Game</span>
+                    </h1>
+                    <p class="hero-subtitle">Experience unmatched power, precision, and control with our carbon fiber engineered padel rackets.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                            Shop Collection
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Watch Video
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>15K+</h3>
+                            <p>Players Worldwide</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Pro Athletes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span>38mm EVA Core</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span>Pro Balance</span>
+                    </div>
+                    <div class="racket-showcase">
+                        <img src="racket.png" alt="Premium Padel Racket" class="racket-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Premium Collection</span>
+                <h2 class="section-title">Our Rackets</h2>
+                <p class="section-subtitle">Engineered for champions, crafted for perfection</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-tilt>
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="racket.png" alt="AURBON Pro Elite">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>AURBON Pro Elite</h3>
+                        <p class="product-desc">Our flagship model with 3K carbon fiber face and maximum power</p>
+                        <div class="product-specs">
+                            <span>⚡ Power: 95/100</span>
+                            <span>🎯 Control: 90/100</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="old-price">$299</span>
+                                <span class="current-price">$249</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('AURBON Pro Elite', 249)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-tilt>
+                    <div class="product-badge featured">Featured</div>
+                    <div class="product-image">
+                        <img src="racket.png" alt="AURBON Control Master">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>AURBON Control Master</h3>
+                        <p class="product-desc">Perfect balance for precision players seeking ultimate control</p>
+                        <div class="product-specs">
+                            <span>⚡ Power: 85/100</span>
+                            <span>🎯 Control: 95/100</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="current-price">$279</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('AURBON Control Master', 279)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-tilt>
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="racket.png" alt="AURBON Carbon X">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>AURBON Carbon X</h3>
+                        <p class="product-desc">Latest technology with 12K carbon weave for explosive power</p>
+                        <div class="product-specs">
+                            <span>⚡ Power: 98/100</span>
+                            <span>🎯 Control: 88/100</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="current-price">$329</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('AURBON Carbon X', 329)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Technology</span>
+                <h2 class="section-title">What Makes Us Different</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Maximum Power</h3>
+                    <p>Advanced carbon fiber construction delivers explosive power in every shot</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Precision Control</h3>
+                    <p>Engineered sweet spot for unmatched accuracy and ball placement</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Premium Materials</h3>
+                    <p>Only the finest carbon fiber and EVA foam for lasting performance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Tested by Pros</h3>
+                    <p>Trusted by over 50 professional athletes worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Lightweight Design</h3>
+                    <p>Optimized weight distribution for effortless maneuverability</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>2 Year Warranty</h3>
+                    <p>Complete peace of mind with our comprehensive warranty program</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="racket.png" alt="AURBON Padel Craftsmanship">
+                    <div class="about-decoration"></div>
+                </div>
+                <div class="about-text">
+                    <span class="section-badge">Our Story</span>
+                    <h2>Crafted for Champions</h2>
+                    <p>Since 2015, AURBON has been pushing the boundaries of padel racket technology. Our mission is simple: create the perfect balance of power, control, and feel.</p>
+                    <p>Every racket is meticulously engineered using aerospace-grade materials and tested by professional athletes to ensure peak performance on the court.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Hand-crafted with precision</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Quality tested at every stage</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Sustainable manufacturing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the AURBON Family</h2>
+                <p>Get exclusive access to new releases, pro tips, and special offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AURBON</h3>
+                    <p>Premium padel rackets engineered for excellence</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#features">Technology</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURBON. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-cart" id="closeCart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">$0</span>
+                </div>
+                <button class="btn btn-primary checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-overlay"></div>
+        <div class="payment-content">
+            <button class="close-payment" id="closePayment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="payment-header">
+                <div class="payment-step-indicator">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Confirm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-body">
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-items" id="summaryItems"></div>
+                    <div class="summary-line"></div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summarySubtotal">$0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (10%)</span>
+                        <span id="summaryTax">$0</span>
+                    </div>
+                    <div class="summary-line"></div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="summaryTotal">$0</span>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form-container">
+                    <h3>Payment Details</h3>
+                    <form id="paymentForm" class="payment-form">
+                        <!-- Card Number -->
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <div class="card-input-wrapper">
+                                <input
+                                    type="text"
+                                    id="cardNumber"
+                                    placeholder="1234 5678 9012 3456"
+                                    maxlength="19"
+                                    required
+                                >
+                                <div class="card-brand" id="cardBrand"></div>
+                            </div>
+                            <span class="error-message" id="cardNumberError"></span>
+                        </div>
+
+                        <!-- Cardholder Name -->
+                        <div class="form-group">
+                            <label for="cardName">Cardholder Name</label>
+                            <input
+                                type="text"
+                                id="cardName"
+                                placeholder="John Doe"
+                                required
+                            >
+                            <span class="error-message" id="cardNameError"></span>
+                        </div>
+
+                        <!-- Expiry & CVV -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardExpiry">Expiry Date</label>
+                                <input
+                                    type="text"
+                                    id="cardExpiry"
+                                    placeholder="MM/YY"
+                                    maxlength="5"
+                                    required
+                                >
+                                <span class="error-message" id="cardExpiryError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardCvv">CVV</label>
+                                <input
+                                    type="text"
+                                    id="cardCvv"
+                                    placeholder="123"
+                                    maxlength="4"
+                                    required
+                                >
+                                <span class="error-message" id="cardCvvError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Billing Address -->
+                        <div class="form-group">
+                            <label for="billingAddress">Billing Address</label>
+                            <input
+                                type="text"
+                                id="billingAddress"
+                                placeholder="123 Main Street"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="billingCity">City</label>
+                                <input
+                                    type="text"
+                                    id="billingCity"
+                                    placeholder="New York"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="billingZip">ZIP Code</label>
+                                <input
+                                    type="text"
+                                    id="billingZip"
+                                    placeholder="10001"
+                                    maxlength="10"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Payment Button -->
+                        <button type="submit" class="btn btn-primary payment-submit-btn">
+                            <span class="btn-text">Pay Now</span>
+                            <span class="btn-loader" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                                Processing...
+                            </span>
+                        </button>
+
+                        <div class="secure-payment">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span>Secure 256-bit SSL encrypted payment</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your order has been confirmed. You'll receive an email confirmation shortly.</p>
+            <div class="order-number">Order #<span id="orderNumber"></span></div>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div class="login-logo">AURBON</div>
+            <h2>Welcome Back</h2>
+            <p class="login-subtitle">Sign in to access the collection</p>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" autocomplete="current-password" required>
+                </div>
+                <div class="login-error" id="loginError">Incorrect username or password.</div>
+                <button type="submit" class="btn btn-primary login-submit-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
