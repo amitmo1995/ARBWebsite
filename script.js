@@ -691,30 +691,3 @@ const animateOnScroll = () => {
 window.addEventListener('load', animateOnScroll);
 
 console.log('🎾 AURBON - Premium Padel Rackets Website Loaded Successfully!');
-// ==================== LOGIN ====================
-(function() {
-    const overlay = document.getElementById('loginOverlay');
-    const form = document.getElementById('loginForm');
-    const errorEl = document.getElementById('loginError');
-
-    const VALID_USER = 'aurbon';
-    const VALID_PASS = 'ARB';
-
-    if (sessionStorage.getItem('aurbon_auth') === '1') {
-        overlay.classList.add('hidden');
-    }
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const user = document.getElementById('loginUsername').value.trim();
-        const pass = document.getElementById('loginPassword').value;
-
-        if (user === VALID_USER && pass === VALID_PASS) {
-            sessionStorage.setItem('aurbon_auth', '1');
-            overlay.classList.add('hidden');
-        } else {
-            errorEl.classList.add('visible');
-            document.getElementById('loginPassword').value = '';
-        }
-    });
-})();

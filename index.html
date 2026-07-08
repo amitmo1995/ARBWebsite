@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURBON - Premium Padel Rackets</title>
+    <link rel="icon" type="image/png" href="main_logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +16,14 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h1>AURBON</h1>
+                    <a href="#home" class="logo-link">
+                        <img src="main_logo.png" alt="AURBON" class="logo-icon">
+                        <img src="signature_logo.png" alt="AURBON" class="logo-name">
+                    </a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#brand">The Brand</a></li>
                     <li><a href="#products">Rackets</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#about">About</a></li>
@@ -37,8 +42,36 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Home Section — Logo Splash -->
+    <section id="home" class="home-splash">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="splash-particles">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="splash-rings">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+        </div>
+        <div class="splash-content">
+            <img src="main_logo.png" alt="AURBON" class="splash-icon">
+            <img src="Name_logo_capital_letters.png" alt="AURBON" class="splash-wordmark">
+            <p class="splash-tagline">Premium Padel Rackets</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- The Brand Section -->
+    <section id="brand" class="hero">
         <div class="hero-bg">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
@@ -94,15 +127,11 @@
                         <span>Pro Balance</span>
                     </div>
                     <div class="racket-showcase">
-                        <img src="racket.png" alt="Premium Padel Racket" class="racket-img">
+                        <img src="main_logo.png" alt="AURBON Logo" class="hero-main-logo">
                         <div class="glow-effect"></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="scroll-arrow"></div>
         </div>
     </section>
 
@@ -116,13 +145,10 @@
             </div>
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card" data-tilt>
-                    <div class="product-badge">Bestseller</div>
-                    <div class="product-image">
-                        <img src="racket.png" alt="AURBON Pro Elite">
-                        <div class="product-overlay">
-                            <button class="quick-view">Quick View</button>
-                        </div>
+                <div class="product-card coming-soon-card" data-tilt>
+                    <div class="product-badge coming-soon-badge">Coming Soon</div>
+                    <div class="coming-soon-overlay-card">
+                        <span>Coming Soon</span>
                     </div>
                     <div class="product-info">
                         <h3>AURBON Pro Elite</h3>
@@ -133,24 +159,18 @@
                         </div>
                         <div class="product-footer">
                             <div class="price">
-                                <span class="old-price">$299</span>
                                 <span class="current-price">$249</span>
                             </div>
-                            <button class="add-to-cart" onclick="addToCart('AURBON Pro Elite', 249)">
-                                Add to Cart
-                            </button>
+                            <button class="add-to-cart coming-soon-btn" disabled>Coming Soon</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card" data-tilt>
-                    <div class="product-badge featured">Featured</div>
-                    <div class="product-image">
-                        <img src="racket.png" alt="AURBON Control Master">
-                        <div class="product-overlay">
-                            <button class="quick-view">Quick View</button>
-                        </div>
+                <div class="product-card coming-soon-card" data-tilt>
+                    <div class="product-badge coming-soon-badge">Coming Soon</div>
+                    <div class="coming-soon-overlay-card">
+                        <span>Coming Soon</span>
                     </div>
                     <div class="product-info">
                         <h3>AURBON Control Master</h3>
@@ -163,21 +183,16 @@
                             <div class="price">
                                 <span class="current-price">$279</span>
                             </div>
-                            <button class="add-to-cart" onclick="addToCart('AURBON Control Master', 279)">
-                                Add to Cart
-                            </button>
+                            <button class="add-to-cart coming-soon-btn" disabled>Coming Soon</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card" data-tilt>
-                    <div class="product-badge new">New</div>
-                    <div class="product-image">
-                        <img src="racket.png" alt="AURBON Carbon X">
-                        <div class="product-overlay">
-                            <button class="quick-view">Quick View</button>
-                        </div>
+                <div class="product-card coming-soon-card" data-tilt>
+                    <div class="product-badge coming-soon-badge">Coming Soon</div>
+                    <div class="coming-soon-overlay-card">
+                        <span>Coming Soon</span>
                     </div>
                     <div class="product-info">
                         <h3>AURBON Carbon X</h3>
@@ -190,9 +205,7 @@
                             <div class="price">
                                 <span class="current-price">$329</span>
                             </div>
-                            <button class="add-to-cart" onclick="addToCart('AURBON Carbon X', 329)">
-                                Add to Cart
-                            </button>
+                            <button class="add-to-cart coming-soon-btn" disabled>Coming Soon</button>
                         </div>
                     </div>
                 </div>
@@ -275,11 +288,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-image">
-                    <img src="racket.png" alt="AURBON Padel Craftsmanship">
-                    <div class="about-decoration"></div>
-                </div>
-                <div class="about-text">
+<div class="about-text">
                     <span class="section-badge">Our Story</span>
                     <h2>Crafted for Champions</h2>
                     <p>Since 2015, AURBON has been pushing the boundaries of padel racket technology. Our mission is simple: create the perfect balance of power, control, and feel.</p>
@@ -322,7 +331,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>AURBON</h3>
+                    <div class="footer-brand">
+                        <img src="main_logo.png" alt="AURBON" class="footer-logo-icon">
+                        <img src="signature_logo.png" alt="AURBON Signature" class="footer-signature">
+                    </div>
                     <p>Premium padel rackets engineered for excellence</p>
                 </div>
                 <div class="footer-section">
@@ -569,27 +581,6 @@
         </div>
     </div>
 
-    <!-- Login Modal -->
-    <div class="login-overlay" id="loginOverlay">
-        <div class="login-box">
-            <div class="login-logo">AURBON</div>
-            <h2>Welcome Back</h2>
-            <p class="login-subtitle">Sign in to access the collection</p>
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="loginUsername">Username</label>
-                    <input type="text" id="loginUsername" placeholder="Enter username" autocomplete="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" placeholder="Enter password" autocomplete="current-password" required>
-                </div>
-                <div class="login-error" id="loginError">Incorrect username or password.</div>
-                <button type="submit" class="btn btn-primary login-submit-btn">Sign In</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
