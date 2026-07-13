@@ -2018,3 +2018,70 @@ body {
     90%  { opacity: 0.6; }
     100% { bottom: 100%; opacity: 0; transform: translateX(40px); }
 }
+
+/* ==================== PRODUCT TABS ==================== */
+.product-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.4rem;
+    width: fit-content;
+}
+
+.tab-btn {
+    padding: 0.6rem 2rem;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-dark);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.tab-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.4);
+}
+
+.tab-btn:not(.active):hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInTab 0.3s ease;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.products-grid-accessories {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 968px) {
+    .products-grid-accessories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .products-grid-accessories {
+        grid-template-columns: 1fr;
+    }
+}
