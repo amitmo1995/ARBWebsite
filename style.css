@@ -2085,3 +2085,275 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================== CLEAN DESIGN OVERRIDES ==================== */
+
+/* --- Navbar --- */
+.logo-icon { height: 36px; }
+.logo-name  { height: 46px; }
+
+.nav-links { gap: 2rem; }
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.cart-btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
+/* --- Splash / Home --- */
+.splash-icon    { width: min(100px, 22vw); }
+.splash-wordmark { width: min(420px, 70vw); }
+.splash-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* --- Section headers --- */
+.section-badge {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    padding: 0.35rem 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.5);
+}
+
+.section-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.35);
+}
+
+/* --- Product cards --- */
+.product-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.product-card:hover {
+    border-color: rgba(255,255,255,0.14) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.coming-soon-overlay-card {
+    height: 90px;
+    border: 1px dashed rgba(255,255,255,0.1);
+    background: transparent;
+    margin-bottom: 1.2rem;
+}
+
+.coming-soon-overlay-card span {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.2);
+    border: none;
+    padding: 0;
+}
+
+.coming-soon-badge {
+    font-size: 0.65rem !important;
+    letter-spacing: 1.5px;
+    padding: 0.25rem 0.75rem !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.4) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 999px !important;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+}
+
+.product-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.product-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.product-specs span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.current-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.coming-soon-btn {
+    font-size: 0.75rem !important;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 1rem !important;
+    background: rgba(255,255,255,0.05) !important;
+    color: rgba(255,255,255,0.3) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 8px !important;
+}
+
+/* --- Tab buttons --- */
+.product-tabs {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.5rem 1.75rem;
+}
+
+.tab-btn.active {
+    background: rgba(255,255,255,0.1);
+    box-shadow: none;
+    color: white;
+}
+
+/* --- Feature cards --- */
+.feature-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.feature-card:hover {
+    border-color: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.feature-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+}
+
+.feature-card p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+}
+
+/* --- About --- */
+.about-text h2 {
+    display: none; /* heading now in section-header */
+}
+
+.about-text p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+}
+
+.check-icon {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+.about-feature span:last-child {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* --- Newsletter --- */
+.newsletter-content h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-content p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form input {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- Footer --- */
+.footer-logo-icon  { height: 32px; }
+.footer-signature  { height: 36px; }
+
+.footer-brand { margin-bottom: 0.75rem; }
+
+.footer-content p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+}
+
+.footer-section h4 {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul li a,
+.social-links a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.3);
+    transition: color 0.2s;
+}
+
+.footer-section ul li a:hover,
+.social-links a:hover { color: white; }
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+}
