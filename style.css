@@ -2671,3 +2671,155 @@ body { background: #000; }
     align-items: center;
     width: 100%;
 }
+
+/* ==================== PRODUCT RACKET IMAGE ==================== */
+.product-image-wrap {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-racket-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ==================== PRODUCT CAROUSEL ==================== */
+.product-carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+.carousel-slide img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.carousel-label {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s, color 0.2s;
+    line-height: 1;
+    padding: 0;
+}
+
+.carousel-arrow:hover {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+}
+
+.carousel-prev { left: 6px; }
+.carousel-next { right: 6px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.carousel-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    transition: background 0.2s;
+}
+
+.carousel-dot.active {
+    background: rgba(255,255,255,0.6);
+}
+
+/* ==================== CAROUSEL ANIMATION ==================== */
+.carousel-slide {
+    transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.carousel-slide.slide-out-left {
+    animation: slideOutLeft 0.32s ease forwards;
+}
+.carousel-slide.slide-out-right {
+    animation: slideOutRight 0.32s ease forwards;
+}
+.carousel-slide.slide-in-right {
+    animation: slideInRight 0.32s ease forwards;
+}
+.carousel-slide.slide-in-left {
+    animation: slideInLeft 0.32s ease forwards;
+}
+
+@keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(-40px); }
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(40px); }
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.carousel-label { display: none; }

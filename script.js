@@ -681,3 +681,34 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     });
 });
+
+// ==================== PRODUCT CAROUSEL ====================
+function carouselMove(id, dir) {
+    const carousel = document.getElementById(id);
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let current = [...slides].findIndex(s => s.classList.contains('active'));
+
+    const next = (current + dir + slides.length) % slides.length;
+
+    slides[current].classList.add(dir > 0 ? 'slide-out-left' : 'slide-out-right');
+    slides[next].classList.add(dir > 0 ? 'slide-in-right' : 'slide-in-left');
+    slides[next].classList.add('active');
+
+    setTimeout(() => {
+        slides[current].classList.remove('active', 'slide-out-left', 'slide-out-right');
+        slides[next].classList.remove('slide-in-right', 'slide-in-left');
+        dots[current].classList.remove('active');
+        dots[next].classList.add('active');
+    }, 320);
+}
+
+// Swipe support for carousels
+document.querySelectorAll('.product-carousel').forEach(carousel => {
+    let startX = 0;
+    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+    carousel.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) carouselMove(carousel.id, diff > 0 ? 1 : -1);
+    });
+});
