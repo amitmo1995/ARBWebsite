@@ -2357,3 +2357,317 @@ body {
     font-size: 0.75rem;
     color: rgba(255,255,255,0.2);
 }
+
+/* ==================== PREMIUM BLACK REDESIGN ==================== */
+
+/* True black background everywhere */
+body { background: #000; }
+
+:root {
+    --dark: #000000;
+    --dark-2: #0d0d0d;
+    --dark-3: #141414;
+}
+
+/* Kill the floating orbs outside the splash */
+.products .gradient-orb,
+.features .gradient-orb,
+.about .gradient-orb,
+.newsletter .gradient-orb,
+.footer .gradient-orb { display: none; }
+
+/* Dim orbs on splash to be very subtle */
+.home-splash .orb-1 { opacity: 0.18; width: 600px; height: 600px; background: radial-gradient(circle, #3322cc 0%, transparent 70%); }
+.home-splash .orb-2 { opacity: 0.10; background: radial-gradient(circle, #220099 0%, transparent 70%); }
+.home-splash .orb-3 { opacity: 0.08; background: radial-gradient(circle, #441199 0%, transparent 70%); }
+
+/* Rings: more subtle */
+.ring { border-color: rgba(255,255,255,0.04); }
+
+/* Particles: dimmer */
+.splash-particles span { background: rgba(160,130,255,0.5); }
+
+/* Splash text */
+.splash-tagline {
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 10px;
+    font-size: 0.7rem;
+}
+
+/* Sections: zero background, clean black */
+.products, .features, .about, .newsletter { background: #000; }
+.footer { background: #060606; border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Section dividers */
+.products  { border-top: 1px solid rgba(255,255,255,0.06); }
+.features  { border-top: 1px solid rgba(255,255,255,0.06); }
+.about     { border-top: 1px solid rgba(255,255,255,0.06); }
+.newsletter { border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Section header: ultra clean */
+.section-badge {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 3px;
+    font-size: 0.65rem;
+}
+
+.section-title {
+    color: #fff;
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    color: rgba(255,255,255,0.25);
+    font-size: 0.82rem;
+    font-weight: 300;
+}
+
+/* Product cards: flat black, razor-thin border */
+.product-card {
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: border-color 0.3s;
+}
+
+.product-card:hover {
+    border-color: rgba(255,255,255,0.18) !important;
+}
+
+.coming-soon-overlay-card {
+    height: 80px;
+    border: 1px dashed rgba(255,255,255,0.07);
+    border-radius: 8px;
+    background: transparent;
+    margin-bottom: 1.25rem;
+}
+
+.coming-soon-overlay-card span {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.15);
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.35rem;
+}
+
+.product-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.28);
+    line-height: 1.6;
+}
+
+.product-specs span {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.25);
+}
+
+.current-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.5px;
+}
+
+.coming-soon-badge {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: rgba(255,255,255,0.2) !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 2px !important;
+    padding: 0.2rem 0.65rem !important;
+}
+
+.coming-soon-btn {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: rgba(255,255,255,0.22) !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 2px !important;
+    cursor: default !important;
+}
+
+/* Tabs */
+.product-tabs {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 0.3rem;
+    gap: 0.25rem;
+}
+
+.tab-btn {
+    background: transparent;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.45rem 1.5rem;
+    border-radius: 6px;
+}
+
+.tab-btn.active {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    box-shadow: none;
+}
+
+/* Feature cards */
+.feature-card {
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    transition: border-color 0.3s;
+}
+
+.feature-card:hover {
+    background: #0d0d0d;
+    border-color: rgba(255,255,255,0.14);
+}
+
+.feature-icon {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    color: rgba(255,255,255,0.45);
+}
+
+.feature-card h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.feature-card p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.28);
+    line-height: 1.7;
+}
+
+/* About */
+.about-text p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.9;
+}
+
+.about-feature span:last-child {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+}
+
+.check-icon { color: rgba(255,255,255,0.3); }
+
+/* Newsletter */
+.newsletter {
+    padding: 3rem 0;
+    background: #000 !important;
+}
+
+.newsletter-content h2 {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.newsletter-content p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.28);
+}
+
+.newsletter-form input {
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 0.82rem;
+    border-radius: 8px;
+}
+
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.2); }
+.newsletter-form input:focus { border-color: rgba(255,255,255,0.2); background: #0d0d0d; }
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: rgba(255,255,255,0.88);
+    transform: none;
+    box-shadow: none;
+}
+
+/* Footer */
+.footer { background: #060606 !important; }
+
+.footer-section h4 {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+}
+
+.footer-section ul li a,
+.social-links a {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+
+.footer-section ul li a:hover,
+.social-links a:hover { color: #fff; }
+
+.footer-content p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.6;
+}
+
+.footer-bottom p {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.15);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+/* ==================== SPLASH: LOGO AT TOP CENTER ==================== */
+.home-splash {
+    align-items: flex-start;
+    padding-top: 6rem;
+    justify-content: center;
+}
+
+.splash-content {
+    align-items: center;
+    width: 100%;
+}
