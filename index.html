@@ -28,13 +28,22 @@
 </head>
 <body>
 
+    <!-- ============ PRIVACY NOTICE BANNER ============ -->
+    <div class="privacy-notice" id="privacyNotice" role="region" aria-label="Privacy notice">
+        <p>This site uses Google Fonts, an external service that may process your IP address. We don't use analytics or tracking cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
+        <button class="privacy-notice-close" id="dismissPrivacyNotice" aria-label="Dismiss privacy notice">Got it</button>
+    </div>
+
+    <!-- ============ SKIP NAVIGATION ============ -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- ============ NAVIGATION (bottom) ============ -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="#home" class="logo-link">
-                        <img src="main_logo.png" alt="AURBON" class="logo-icon">
+                    <a href="#home" class="logo-link" aria-label="AURBON — scroll to top">
+                        <img src="main_logo.png" alt="" class="logo-icon" aria-hidden="true">
                         <img src="signature_logo.png" alt="AURBON" class="logo-name">
                     </a>
                 </div>
@@ -51,6 +60,8 @@
             </div>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- ============ HERO ============ -->
     <section id="home" class="home-splash">
@@ -265,22 +276,34 @@
                 <h2 class="launch-heading">BE FIRST ON COURT.</h2>
                 <p class="launch-body">Join the AURBON launch list and be the first to know when our first collection drops.</p>
                 <p class="launch-sub">Early members will receive priority access to the first AURBON release.</p>
-                <form class="launch-form" id="launchForm">
-                    <input type="email" placeholder="Your email address" required>
+                <form class="launch-form" id="launchForm" novalidate>
+                    <div class="launch-field">
+                        <label for="launchEmail" class="visually-hidden">Email address</label>
+                        <input type="email" id="launchEmail" name="email" autocomplete="email" placeholder="Your email address" required aria-required="true">
+                    </div>
+                    <div class="launch-consent">
+                        <label class="consent-label">
+                            <input type="checkbox" id="launchConsent" name="consent" required aria-required="true">
+                            <span>I agree to my email address being stored to receive AURBON launch updates. I can withdraw consent at any time. See our <a href="privacy-policy.html" class="consent-policy-link" target="_blank">Privacy Policy</a>.</span>
+                        </label>
+                        <span class="consent-error" id="consentError" role="alert" aria-live="polite" hidden>Please accept the privacy policy to continue.</span>
+                    </div>
                     <button type="submit" class="btn btn-primary">Join the Launch</button>
                 </form>
             </div>
         </div>
     </section>
 
+    </main><!-- end #main-content -->
+
     <!-- ============ FOOTER ============ -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-brand-block">
                     <div class="footer-brand">
-                        <img src="main_logo.png" alt="AURBON" class="footer-logo-icon">
-                        <img src="signature_logo.png" alt="AURBON Signature" class="footer-signature">
+                        <img src="main_logo.png" alt="" class="footer-logo-icon" aria-hidden="true">
+                        <img src="signature_logo.png" alt="AURBON" class="footer-signature">
                     </div>
                     <p class="footer-tagline">Premium padel rackets.<br>Coming soon.</p>
                 </div>
@@ -292,8 +315,8 @@
                     </div>
                     <div class="footer-col">
                         <h4>Legal</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
                     </div>
                 </div>
             </div>

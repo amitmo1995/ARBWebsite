@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | AURBON</title>
+    <meta name="description" content="Privacy Policy for AURBON — how we collect, use, and protect your personal information.">
+    <link rel="icon" type="image/png" href="main_logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .legal-page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 5rem 2rem 5rem;
+        }
+        .legal-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            transition: color 0.2s;
+        }
+        .legal-back:hover { color: #fff; }
+        .legal-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .legal-brand .lb-icon { height: 32px; width: auto; }
+        .legal-brand .lb-word { height: 16px; width: auto; filter: invert(1); opacity: 0.7; }
+        .legal-title {
+            font-family: var(--font-heading, 'Rajdhani', sans-serif);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 0 0.4rem;
+        }
+        .legal-meta {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .legal-toc {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+        }
+        .legal-toc h2 {
+            font-family: var(--font-heading, 'Rajdhani', sans-serif);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin: 0 0 0.75rem;
+        }
+        .legal-toc ol {
+            margin: 0;
+            padding-left: 1.2rem;
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        .legal-toc li {
+            font-size: 0.85rem;
+            line-height: 2;
+            color: rgba(255,255,255,0.5);
+        }
+        .legal-toc a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+        .legal-toc a:hover { color: #fff; }
+        .legal-section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+        .legal-section > h2 {
+            font-family: var(--font-heading, 'Rajdhani', sans-serif);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin: 0 0 1rem;
+        }
+        .legal-section h3 {
+            font-family: var(--font-heading, 'Rajdhani', sans-serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            margin: 1.75rem 0 0.5rem;
+        }
+        .legal-section p {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.58);
+            margin: 0 0 0.85rem;
+        }
+        .legal-section ul,
+        .legal-section ol {
+            margin: 0.5rem 0 0.85rem 1.25rem;
+            padding: 0;
+        }
+        .legal-section li {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.58);
+            margin-bottom: 0.3rem;
+        }
+        .legal-section strong {
+            color: rgba(255,255,255,0.82);
+            font-weight: 600;
+        }
+        .legal-placeholder {
+            display: inline-block;
+            background: rgba(255, 200, 0, 0.1);
+            border: 1px solid rgba(255, 200, 0, 0.3);
+            border-radius: 3px;
+            padding: 0.1em 0.45em;
+            color: rgba(255, 210, 50, 0.9);
+            font-size: 0.82em;
+            font-style: italic;
+        }
+        .legal-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin: 0 0 3rem;
+        }
+        .legal-link {
+            color: rgba(255,255,255,0.65);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .legal-link:hover { color: #fff; }
+        .legal-highlight-box {
+            background: rgba(255,255,255,0.03);
+            border-left: 2px solid rgba(255,255,255,0.15);
+            border-radius: 0 6px 6px 0;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+        .legal-highlight-box p {
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            .legal-toc ol { column-count: 1; }
+            .legal-page { padding: 3rem 1.25rem 5rem; }
+        }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="AURBON — return to home">
+                    <img src="main_logo.png" alt="" class="logo-icon" aria-hidden="true">
+                    <img src="signature_logo.png" alt="AURBON" class="logo-name">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="index.html#launch" class="btn-nav-launch btn-nav-launch--primary">Join the Launch</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+<div class="legal-page">
+
+    <a href="index.html" class="legal-back">&#8592; Back to AURBON</a>
+
+    <div class="legal-brand">
+        <img src="main_logo.png" alt="" class="lb-icon" aria-hidden="true">
+        <img src="Name_logo_capital_letters.png" alt="AURBON" class="lb-word">
+    </div>
+
+    <h1 class="legal-title">Privacy Policy</h1>
+    <p class="legal-meta">Last updated: September 2026 &nbsp;&middot;&nbsp; Governing law: State of Israel</p>
+
+    <nav class="legal-toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#pp-who">Who We Are</a></li>
+            <li><a href="#pp-what">What We Collect</a></li>
+            <li><a href="#pp-why">How &amp; Why We Use It</a></li>
+            <li><a href="#pp-retention">Retention</a></li>
+            <li><a href="#pp-sharing">Sharing &amp; Disclosure</a></li>
+            <li><a href="#pp-transfer">International Transfer</a></li>
+            <li><a href="#pp-rights">Your Rights</a></li>
+            <li><a href="#pp-security">Security</a></li>
+            <li><a href="#pp-children">Children</a></li>
+            <li><a href="#pp-links">Third-Party Links</a></li>
+            <li><a href="#pp-changes">Policy Changes</a></li>
+            <li><a href="#pp-contact">Contact Us</a></li>
+        </ol>
+    </nav>
+
+    <!-- INTRO -->
+    <div class="legal-section">
+        <p>This Privacy Policy describes how <span class="legal-placeholder">[BUSINESS LEGAL NAME REQUIRED]</span> ("AURBON", "we", "our", or "us") collects, uses, and protects personal information relating to visitors to our website at <strong>aurbon-sports.com</strong> (the "Website").</p>
+        <p>We are committed to protecting your privacy in compliance with the Israeli Privacy Protection Law, 5741-1981 ("Privacy Law"), including <strong>Amendment No.&nbsp;13</strong> (which entered into force on&nbsp;August&nbsp;14,&nbsp;2023) and any regulations thereunder. Where applicable, we also take into account the guidelines of the Israeli Privacy Protection Authority (Reshut Hagana Al Hapratiyut).</p>
+        <p>Please read this Policy carefully. By using the Website you acknowledge that you have read and understood it.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 1. WHO WE ARE -->
+    <div class="legal-section" id="pp-who">
+        <h2>1. Who We Are</h2>
+        <p><strong>Data Controller / Database Owner:</strong></p>
+        <div class="legal-highlight-box">
+            <p>
+                <span class="legal-placeholder">[BUSINESS LEGAL NAME REQUIRED]</span><br>
+                Company / Business Registration No.:&nbsp;<span class="legal-placeholder">[COMPANY / DEALER NUMBER REQUIRED]</span><br>
+                Address:&nbsp;<span class="legal-placeholder">[BUSINESS ADDRESS REQUIRED]</span><br>
+                E-mail:&nbsp;<a href="mailto:office@aurbon-sports.com" class="legal-link">office@aurbon-sports.com</a>
+            </p>
+        </div>
+        <p>For any privacy-related enquiry or to exercise your rights, please contact us at the address above.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 2. WHAT WE COLLECT -->
+    <div class="legal-section" id="pp-what">
+        <h2>2. What Information We Collect</h2>
+        <p>The Website is currently a pre-launch informational site. We collect only the following limited categories of information.</p>
+
+        <h3>a. Email Address — Launch List</h3>
+        <p>If you choose to submit your email address via our "Join the Launch" form, we collect your email address for the purpose described in Section&nbsp;3. Submission is entirely <strong>voluntary</strong>. You are not required to provide your email address to browse the Website. Before your submission is accepted, you must actively check a consent checkbox confirming that you agree to this use.</p>
+
+        <h3>b. Technical / Access Data — Hosting Provider</h3>
+        <p>When you visit the Website, our hosting provider, <strong>GitHub, Inc.</strong> (GitHub Pages), may automatically collect standard web-server log data. This may include your IP address, browser type, operating system, referring URL, pages visited, and the date and time of your request. This data is processed by GitHub in accordance with <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="legal-link" target="_blank" rel="noopener noreferrer">GitHub's General Privacy Statement</a>. We do not receive or have direct access to these logs.</p>
+
+        <h3>c. Data Sent to Google — Fonts</h3>
+        <p>Our Website loads typefaces (fonts) from <strong>Google's servers</strong> (Google Fonts). Each time a page loads, your browser makes a request to Google's servers, and Google will receive your IP address and standard browser information as part of that HTTP request. We have no access to or control over this data. It is processed by Google LLC in accordance with <a href="https://policies.google.com/privacy" class="legal-link" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
+
+        <h3>d. What We Do NOT Collect</h3>
+        <p>We want to be transparent. The following data is <strong>not</strong> collected by or on behalf of AURBON through this Website:</p>
+        <ul>
+            <li>No tracking cookies or advertising cookies are set by us</li>
+            <li>No analytics tools are in use (no Google Analytics, no Meta Pixel, no TikTok Pixel, no similar service)</li>
+            <li>No session recording, heatmapping, or behaviour-tracking tools</li>
+            <li>No payment information (the Website does not currently support purchases)</li>
+            <li>No names, phone numbers, or postal addresses beyond what is listed above</li>
+            <li>No user accounts are maintained</li>
+        </ul>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 3. HOW & WHY -->
+    <div class="legal-section" id="pp-why">
+        <h2>3. How and Why We Use Your Information</h2>
+
+        <h3>Launch List Email Addresses</h3>
+        <p><strong>Purpose:</strong> To contact you when the AURBON product collection officially launches — including notification of the launch date, product availability, and any exclusive early-access information we choose to share with list members.</p>
+        <p><strong>Legal basis:</strong> Your freely given, specific, and informed <strong>consent</strong>, provided by you when you check the consent checkbox and submit the launch list form. This basis is consistent with Section 11 of the Privacy Law (as amended).</p>
+        <p><strong>What we will not do:</strong> We will not sell your email address to any third party, share it with third parties for their own marketing purposes, or use it for any purpose other than those explicitly described above. We will not send you unsolicited commercial communications beyond launch-related updates unless you separately consent to further marketing.</p>
+
+        <h3>Technical / Access Data</h3>
+        <p>Processing of technical access data by GitHub Pages is carried out for the purpose of serving the Website and maintaining its security and stability. We do not use this data to identify individual users and do not receive it directly.</p>
+
+        <h3>Google Fonts Data</h3>
+        <p>Google receives your IP address as a technical by-product of delivering font files. We use Google Fonts solely to display typefaces on the Website. We do not receive or use any data from this interaction. See Section&nbsp;6 regarding international transfers.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 4. RETENTION -->
+    <div class="legal-section" id="pp-retention">
+        <h2>4. Data Retention</h2>
+        <p>Email addresses collected via the launch list will be retained until:</p>
+        <ul>
+            <li>you request deletion of your email address (see Section&nbsp;7); or</li>
+            <li>we determine that the list is no longer needed for its stated purpose; or</li>
+            <li>retention is no longer lawful under applicable Israeli law.</li>
+        </ul>
+        <p>In any event, we will not retain your email address longer than is reasonably necessary to fulfil the stated purpose. You may withdraw your consent and request removal at any time by contacting us at <a href="mailto:office@aurbon-sports.com" class="legal-link">office@aurbon-sports.com</a>.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 5. SHARING -->
+    <div class="legal-section" id="pp-sharing">
+        <h2>5. Sharing and Disclosure of Information</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties.</p>
+        <p>We may share limited information only in the following limited circumstances:</p>
+
+        <h3>Service Providers</h3>
+        <p>We may engage trusted third-party service providers (for example, an email delivery or marketing service) to assist in storing or communicating with the launch list. Any such providers are bound by confidentiality obligations and are permitted to use your data only in accordance with our written instructions and this Policy. <span class="legal-placeholder">[IF AN EMAIL SERVICE PROVIDER — e.g. Mailchimp, Brevo, Sendgrid — IS USED, INSERT ITS NAME HERE AND LINK TO ITS PRIVACY POLICY]</span></p>
+
+        <h3>Legal Requirements</h3>
+        <p>We may disclose your information if required to do so by law, court order, or binding direction of a competent Israeli authority, or if we believe in good faith that such disclosure is necessary to protect our legal rights, to prevent fraud, or to protect the safety of individuals.</p>
+
+        <h3>Business Transfer</h3>
+        <p>In the event of a merger, acquisition, or sale of all or substantially all of our business assets, personal information we hold may be transferred to the acquiring entity as part of that transaction, subject to the same protections as set out in this Policy.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 6. INTERNATIONAL TRANSFER -->
+    <div class="legal-section" id="pp-transfer">
+        <h2>6. International Data Transfer</h2>
+        <p>The Website is hosted by GitHub, Inc. (United States) and loads fonts from Google LLC (United States). Your IP address and browser information may therefore be processed outside of Israel, including in the United States.</p>
+        <p>We take reasonable steps to ensure that any international transfer of personal information complies with applicable Israeli privacy law. GitHub and Google each maintain Privacy Shield or equivalent transfer frameworks and data-processing commitments. For details, see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="legal-link" target="_blank" rel="noopener noreferrer">GitHub's Privacy Statement</a> and <a href="https://policies.google.com/privacy" class="legal-link" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
+        <p><span class="legal-placeholder">[IF AN EMAIL SERVICE PROVIDER OUTSIDE ISRAEL IS USED, DESCRIBE ITS LOCATION AND TRANSFER SAFEGUARDS HERE]</span></p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 7. YOUR RIGHTS -->
+    <div class="legal-section" id="pp-rights">
+        <h2>7. Your Rights</h2>
+        <p>Under the Israeli Privacy Protection Law (as amended by Amendment No.&nbsp;13), you have the following rights with respect to personal information we hold about you:</p>
+        <ul>
+            <li><strong>Right of Access:</strong> You may request a copy of the personal information we hold about you.</li>
+            <li><strong>Right to Correction:</strong> You may request that we correct inaccurate or incomplete personal information.</li>
+            <li><strong>Right to Deletion:</strong> You may request that we delete your personal information from our records, subject to any overriding legal obligation to retain it.</li>
+            <li><strong>Right to Object:</strong> You may object to certain processing of your personal information.</li>
+            <li><strong>Right to Withdraw Consent:</strong> Where processing is based on your consent, you may withdraw it at any time, without affecting the lawfulness of processing carried out before withdrawal. To withdraw consent for the launch list, simply contact us at the address below.</li>
+        </ul>
+        <p>To exercise any of these rights, please send a written request to:<br>
+        <a href="mailto:office@aurbon-sports.com" class="legal-link">office@aurbon-sports.com</a></p>
+        <p>We will acknowledge and respond to your request within a reasonable time, and in any event within the timeframes required by applicable Israeli law. We may need to verify your identity before processing certain requests.</p>
+        <p>If you are not satisfied with our response, you have the right to lodge a complaint with the <strong>Israeli Privacy Protection Authority (Reshut Hagana Al Hapratiyut)</strong>.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 8. SECURITY -->
+    <div class="legal-section" id="pp-security">
+        <h2>8. Security</h2>
+        <p>We implement reasonable technical and organisational measures to protect personal information we hold against unauthorised access, loss, misuse, or alteration. However, no method of data transmission over the internet or electronic storage is completely secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+        <p>In the event of a personal data breach that is likely to cause significant harm, we will notify affected individuals and the relevant authorities as required by law.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 9. CHILDREN -->
+    <div class="legal-section" id="pp-children">
+        <h2>9. Children</h2>
+        <p>This Website is not directed at children under the age of 18. We do not knowingly collect personal information from minors. If you are a parent or guardian and believe that a child under your care has submitted personal information to us without your consent, please contact us at <a href="mailto:office@aurbon-sports.com" class="legal-link">office@aurbon-sports.com</a> and we will take prompt steps to delete such information.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 10. THIRD-PARTY LINKS -->
+    <div class="legal-section" id="pp-links">
+        <h2>10. Third-Party Links</h2>
+        <p>The Website may contain links to third-party websites, including our Instagram account (<a href="https://www.instagram.com/aurbonsports/" class="legal-link" target="_blank" rel="noopener noreferrer">@aurbonsports</a>). We are not responsible for the content or privacy practices of those websites. We encourage you to review the privacy policies of any third-party site you visit.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 11. CHANGES -->
+    <div class="legal-section" id="pp-changes">
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or the Website's functionality. When we make material changes, we will update the "Last updated" date at the top of this page. We encourage you to review this Policy periodically. Continued use of the Website after an updated Policy is posted constitutes your acceptance of the changes.</p>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- 12. CONTACT -->
+    <div class="legal-section" id="pp-contact">
+        <h2>12. Contact Us</h2>
+        <p>For any question, concern, or request regarding this Privacy Policy or the handling of your personal information, please contact us:</p>
+        <div class="legal-highlight-box">
+            <p>
+                <strong>AURBON</strong> &mdash; <span class="legal-placeholder">[BUSINESS LEGAL NAME REQUIRED]</span><br>
+                <span class="legal-placeholder">[BUSINESS ADDRESS REQUIRED]</span><br>
+                E-mail:&nbsp;<a href="mailto:office@aurbon-sports.com" class="legal-link">office@aurbon-sports.com</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-main">
+            <div class="footer-brand-block">
+                <div class="footer-brand">
+                    <img src="main_logo.png" alt="" class="footer-logo-icon" aria-hidden="true">
+                    <img src="signature_logo.png" alt="AURBON" class="footer-signature">
+                </div>
+            </div>
+            <div class="footer-links-block">
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="https://www.instagram.com/aurbonsports/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="mailto:office@aurbon-sports.com">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AURBON. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

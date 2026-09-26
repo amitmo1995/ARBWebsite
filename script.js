@@ -93,11 +93,37 @@ function showNotification(message) {
     setTimeout(() => n.remove(), 2300);
 }
 
+// ==================== PRIVACY NOTICE BANNER ====================
+(function () {
+    const banner = document.getElementById('privacyNotice');
+    const btn    = document.getElementById('dismissPrivacyNotice');
+    if (!banner) return;
+    try {
+        if (localStorage.getItem('aurbon_privacy_dismissed') === '1') {
+            banner.hidden = true;
+        }
+    } catch (_) {}
+    if (btn) {
+        btn.addEventListener('click', function () {
+            banner.hidden = true;
+            try { localStorage.setItem('aurbon_privacy_dismissed', '1'); } catch (_) {}
+        });
+    }
+})();
+
 // ==================== LAUNCH FORM ====================
 const launchForm = document.getElementById('launchForm');
 if (launchForm) {
-    launchForm.addEventListener('submit', e => {
+    launchForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        const consent      = document.getElementById('launchConsent');
+        const consentError = document.getElementById('consentError');
+        if (consent && !consent.checked) {
+            if (consentError) consentError.hidden = false;
+            if (consent) consent.focus();
+            return;
+        }
+        if (consentError) consentError.hidden = true;
         launchForm.innerHTML = '<p class="launch-success">You\'re on the list. We\'ll be in touch.</p>';
     });
 }

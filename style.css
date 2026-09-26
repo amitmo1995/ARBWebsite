@@ -3494,3 +3494,136 @@ body { background: #000; }
     .racket-showcase-img-wrap { min-height: 220px; padding: 1.25rem; }
     .racket-showcase-img { max-height: 240px; }
 }
+
+/* ============================================================
+   COMPLIANCE ADDITIONS — skip link, privacy banner, consent
+   ============================================================ */
+
+/* Skip to main content (accessibility) */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 99999;
+    background: #fff;
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: top 0.15s;
+}
+.skip-to-content:focus {
+    top: 1rem;
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* Visually hidden (accessible labels) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Privacy notice banner */
+.privacy-notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    background: rgba(12, 12, 12, 0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    flex-wrap: wrap;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.privacy-notice p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    text-align: center;
+}
+.privacy-notice p a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.privacy-notice p a:hover { color: #fff; }
+.privacy-notice-close {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-family: inherit;
+}
+.privacy-notice-close:hover {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+}
+.privacy-notice[hidden] { display: none !important; }
+
+/* Launch form — consent checkbox */
+.launch-field {
+    width: 100%;
+    display: contents;
+}
+.launch-consent {
+    width: 100%;
+    margin: 0.6rem 0 0.25rem;
+    text-align: left;
+}
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+.consent-label input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 0.18em;
+    accent-color: #fff;
+    cursor: pointer;
+}
+.consent-label span {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.45);
+}
+.consent-label span a.consent-policy-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.consent-label span a.consent-policy-link:hover { color: #fff; }
+.consent-error {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: rgba(255, 120, 120, 0.9);
+}
