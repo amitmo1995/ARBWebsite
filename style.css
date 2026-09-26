@@ -3447,3 +3447,21 @@ body { background: #000; }
     background: rgba(255,255,255,0.88) !important;
     color: #000 !important;
 }
+
+/* ==================== PERF GRID — 3 COLUMN + RACKET TAG ==================== */
+.perf-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.perf-racket-tag {
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .perf-grid--3 { grid-template-columns: 1fr; }
+}
