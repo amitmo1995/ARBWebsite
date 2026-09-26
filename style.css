@@ -3628,20 +3628,12 @@ body { background: #000; }
     color: rgba(255, 120, 120, 0.9);
 }
 
-/* ============ TESTING — Ad image ============ */
-.testing-adv-wrap {
-    width: 100%;
-    margin-top: 3.5rem;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.07);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-}
-.testing-adv-img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
+/* ============ TESTING — Background image ============ */
+.section-testing {
+    background-image:
+        linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.55) 30%, rgba(8,8,8,0.55) 70%, #080808 100%),
+        url('adv_pics/AURBON-adv.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
