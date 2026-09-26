@@ -3465,3 +3465,32 @@ body { background: #000; }
 @media (max-width: 768px) {
     .perf-grid--3 { grid-template-columns: 1fr; }
 }
+
+/* ==================== RACKET SHOWCASE — SINGLE IMAGE ==================== */
+.racket-showcase-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080808;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 2rem;
+    min-height: 400px;
+}
+
+.racket-showcase-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .racket-showcase-img-wrap { min-height: 280px; }
+    .racket-showcase-img { max-height: 300px; }
+}
+
+@media (max-width: 640px) {
+    .racket-showcase-img-wrap { min-height: 220px; padding: 1.25rem; }
+    .racket-showcase-img { max-height: 240px; }
+}
