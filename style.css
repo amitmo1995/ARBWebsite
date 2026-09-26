@@ -3429,3 +3429,21 @@ body { background: #000; }
     .youre-early-heading { font-size: 2.5rem; }
     .perf-grid { grid-template-columns: 1fr; }
 }
+
+/* ==================== NAV ACTIONS — TWO CTАС ==================== */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-nav-launch--primary {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.btn-nav-launch--primary:hover {
+    background: rgba(255,255,255,0.88) !important;
+    color: #000 !important;
+}
