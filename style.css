@@ -3628,12 +3628,12 @@ body { background: #000; }
     color: rgba(255, 120, 120, 0.9);
 }
 
-/* ============ TESTING — Background image ============ */
-.section-testing {
+/* ============ HERO — Background image ============ */
+.home-splash {
     background-image:
-        linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.55) 30%, rgba(8,8,8,0.55) 70%, #080808 100%),
+        linear-gradient(to bottom, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0.45) 40%, rgba(8,8,8,0.45) 60%, rgba(8,8,8,0.85) 100%),
         url('adv_pics/AURBON-adv.png');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
 }
