@@ -111,22 +111,6 @@ function showNotification(message) {
     }
 })();
 
-// ==================== LAUNCH FORM ====================
-const launchForm = document.getElementById('launchForm');
-if (launchForm) {
-    launchForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const consent      = document.getElementById('launchConsent');
-        const consentError = document.getElementById('consentError');
-        if (consent && !consent.checked) {
-            if (consentError) consentError.hidden = false;
-            if (consent) consent.focus();
-            return;
-        }
-        if (consentError) consentError.hidden = true;
-        launchForm.innerHTML = '<p class="launch-success">You\'re on the list. We\'ll be in touch.</p>';
-    });
-}
 
 // ==================== PRODUCT TABS ====================
 document.querySelectorAll('.tab-btn').forEach(btn => {
