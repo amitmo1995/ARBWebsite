@@ -2823,3 +2823,609 @@ body { background: #000; }
 }
 
 .carousel-label { display: none; }
+
+/* ==================== PRE-LAUNCH REDESIGN STYLES ==================== */
+
+/* --- Nav: Join the Launch CTA --- */
+.btn-nav-launch {
+    display: inline-block;
+    padding: 0.42rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+.btn-nav-launch:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+/* --- Hero: center vertically, more breathing room --- */
+.home-splash {
+    align-items: center;
+    padding: 0 1rem 5rem;
+    justify-content: center;
+}
+
+.splash-content {
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.hero-headline-block {
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.hero-era-text {
+    font-family: var(--font-primary);
+    font-size: clamp(0.75rem, 2.2vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.hero-sub-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 1.5px;
+    font-weight: 300;
+}
+
+.hero-coming-soon-pill {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.32rem 1rem;
+    border-radius: 999px;
+    margin-top: 0.25rem;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: var(--font-primary);
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+}
+.btn-outline:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+.scroll-indicator {
+    bottom: 5rem;
+}
+
+/* --- YOU'RE EARLY section --- */
+.section-youre-early {
+    padding: 8rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.youre-early-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.youre-early-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 1.25rem 0 2.5rem;
+    line-height: 0.95;
+}
+
+.youre-early-body {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.42);
+    line-height: 1.85;
+    max-width: 540px;
+    margin: 0 auto 0.5rem;
+    font-weight: 300;
+}
+
+.youre-early-label {
+    margin-top: 3rem;
+    font-size: 0.62rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    font-weight: 300;
+}
+
+/* --- TESTING section --- */
+.section-testing {
+    padding: 8rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.testing-inner {
+    max-width: 660px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.testing-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 1.25rem 0 2.5rem;
+    line-height: 1.2;
+}
+
+.testing-copy p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.testing-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin: 1.75rem 0;
+}
+
+.testing-lines span {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.testing-label {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.38rem 1.1rem;
+    border-radius: 999px;
+}
+
+/* --- COLLECTION section --- */
+.section-collection {
+    padding: 6rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.racket-showcase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.racket-showcase-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.racket-showcase-row.reverse .racket-showcase-carousel { order: 2; }
+.racket-showcase-row.reverse .racket-showcase-info      { order: 1; }
+
+.racket-showcase-carousel .product-carousel {
+    height: 400px;
+    border-radius: 16px;
+    background: #080808;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 0;
+}
+
+.racket-number {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.18);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+}
+
+.racket-name {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+    line-height: 1;
+}
+
+.racket-position {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 380px;
+    font-weight: 300;
+}
+
+.racket-specs {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 2rem;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.spec-label {
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+    font-weight: 400;
+}
+
+.spec-value {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.62);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.racket-coming-soon {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.38rem 1.1rem;
+    border-radius: 999px;
+}
+
+/* --- PERFORMANCE section --- */
+.section-performance {
+    padding: 6rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.perf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.perf-card {
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    transition: border-color 0.25s;
+}
+
+.perf-card:hover {
+    border-color: rgba(255,255,255,0.14);
+}
+
+.perf-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 1.25rem;
+}
+
+.perf-card h3 {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.perf-card p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.28);
+    line-height: 1.75;
+    font-weight: 300;
+}
+
+/* --- DESIGN section --- */
+.section-design {
+    padding: 9rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-design::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    background: url('main_logo.png') center/contain no-repeat;
+    opacity: 0.025;
+    pointer-events: none;
+}
+
+.design-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.design-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 1.25rem 0 3rem;
+    line-height: 1.05;
+}
+
+.design-body {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.85;
+    max-width: 520px;
+    margin: 0 auto 0.65rem;
+    font-weight: 300;
+}
+
+/* --- OUR STORY section --- */
+.section-story {
+    padding: 6rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.story-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.9;
+    margin-bottom: 0.75rem;
+    font-weight: 300;
+}
+
+.story-idea {
+    font-size: 1.25rem !important;
+    color: rgba(255,255,255,0.82) !important;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    line-height: 1.65 !important;
+    margin: 2.5rem 0 2.5rem !important;
+    font-style: italic;
+}
+
+/* --- LAUNCH LIST section --- */
+.section-launch {
+    padding: 7rem 0;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+}
+
+.launch-inner {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.launch-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 1.25rem 0 1.25rem;
+}
+
+.launch-body {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.launch-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.launch-form {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.launch-form input {
+    flex: 1;
+    max-width: 320px;
+    padding: 0.9rem 1.2rem;
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.82rem;
+    font-family: var(--font-primary);
+    transition: border-color 0.2s;
+}
+
+.launch-form input::placeholder { color: rgba(255,255,255,0.18); }
+.launch-form input:focus { outline: none; border-color: rgba(255,255,255,0.28); background: #0d0d0d; }
+
+.launch-success {
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 3px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+/* --- FOOTER new structure --- */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-tagline {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.18);
+    line-height: 1.8;
+    margin-top: 0.75rem;
+}
+
+.footer-links-block {
+    display: flex;
+    gap: 4rem;
+    flex-shrink: 0;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-col h4 {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.footer-col a {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+}
+
+.footer-col a:hover { color: #fff; }
+
+/* ==================== RESPONSIVE â€” PRE-LAUNCH ==================== */
+
+@media (max-width: 900px) {
+    .racket-showcase-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+    .racket-showcase-row.reverse .racket-showcase-carousel,
+    .racket-showcase-row.reverse .racket-showcase-info {
+        order: unset;
+    }
+    .racket-showcase-carousel .product-carousel {
+        height: 300px;
+    }
+    .racket-name { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+    .section-youre-early,
+    .section-testing,
+    .section-collection,
+    .section-performance,
+    .section-design,
+    .section-story,
+    .section-launch {
+        padding: 5rem 0;
+    }
+    .youre-early-heading { font-size: 3.2rem; letter-spacing: 2px; }
+    .testing-heading { font-size: 1.8rem; }
+    .design-heading { font-size: 2.5rem; }
+    .launch-heading { font-size: 2rem; letter-spacing: 2px; }
+    .hero-cta-group { flex-direction: column; align-items: center; gap: 0.6rem; }
+    .hero-cta-group .btn { width: 100%; max-width: 280px; justify-content: center; }
+    .launch-form { flex-direction: column; align-items: stretch; }
+    .launch-form input { max-width: 100%; }
+    .footer-main { flex-direction: column; gap: 2rem; }
+    .footer-links-block { gap: 2rem; }
+    .racket-showcase-carousel .product-carousel { height: 260px; }
+    .perf-grid { grid-template-columns: 1fr 1fr; }
+    .story-idea { font-size: 1.05rem !important; }
+}
+
+@media (max-width: 400px) {
+    .youre-early-heading { font-size: 2.5rem; }
+    .perf-grid { grid-template-columns: 1fr; }
+}
