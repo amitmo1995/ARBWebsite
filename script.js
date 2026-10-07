@@ -129,9 +129,9 @@ if (!reduceMotion) {
 // (translateY) and tilt (rotateX/rotateY) share a small state object per
 // image so both can drive the same transform without clobbering each other.
 if (!reduceMotion && !isMobileViewport) {
-    const heroImg = document.querySelector('.hero-media-img');
+    const heroImgs = Array.from(document.querySelectorAll('.hero-media-img'));
     const showcaseImgs = Array.from(document.querySelectorAll('.racket-showcase-img'));
-    const tiltTargets = [heroImg, ...showcaseImgs].filter(Boolean);
+    const tiltTargets = [...heroImgs, ...showcaseImgs].filter(Boolean);
 
     const tiltState = new Map();
     tiltTargets.forEach(el => tiltState.set(el, { ty: 0, rx: 0, ry: 0 }));
@@ -148,10 +148,11 @@ if (!reduceMotion && !isMobileViewport) {
         requestAnimationFrame(() => {
             const y = window.scrollY;
 
-            if (heroImg) {
-                tiltState.get(heroImg).ty = y * 0.12;
-                applyTransform(heroImg);
-            }
+            heroImgs.forEach(img => {
+                const factor = img.classList.contains('hero-media-img-left') ? 0.07 : 0.12;
+                tiltState.get(img).ty = y * factor;
+                applyTransform(img);
+            });
 
             showcaseImgs.forEach(img => {
                 const rect = img.getBoundingClientRect();

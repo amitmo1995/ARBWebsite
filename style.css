@@ -361,7 +361,10 @@ body::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 72% 45%, rgba(201, 162, 75, 0.08) 0%, transparent 60%);
+    background:
+        radial-gradient(ellipse 46% 60% at 85% 48%, rgba(138, 92, 255, 0.14) 0%, transparent 62%),
+        radial-gradient(ellipse 46% 60% at 15% 48%, rgba(77, 201, 255, 0.1) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(201, 162, 75, 0.06) 0%, transparent 65%);
     pointer-events: none;
 }
 .hero::after {
@@ -372,30 +375,46 @@ body::after {
     pointer-events: none;
 }
 
+.hero-media-row { display: contents; }
 .hero-media {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 4vw;
     z-index: 0;
     perspective: 1200px;
+    pointer-events: none;
 }
+.hero-media-left { justify-content: flex-start; padding-left: 2.5vw; transform: translateY(-3%); }
+.hero-media-right { justify-content: flex-end; padding-right: 2.5vw; transform: translateY(2%); }
+
 .hero-media-img {
-    width: clamp(340px, 42vw, 620px);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 50px 100px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 140px rgba(138, 92, 255, 0.22));
     transform-style: preserve-3d;
     transition: transform 0.4s var(--ease);
     will-change: transform;
+    pointer-events: auto;
+}
+.hero-media-img-left {
+    width: clamp(220px, 25vw, 400px);
+    filter: drop-shadow(0 40px 90px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 110px rgba(77, 201, 255, 0.2));
+    opacity: 0.94;
+}
+.hero-media-img-right {
+    width: clamp(260px, 30vw, 460px);
+    filter: drop-shadow(0 50px 100px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 140px rgba(138, 92, 255, 0.22));
 }
 
-.hero-container { position: relative; z-index: 1; width: 100%; }
+/* pointer-events:none so this full-width wrapper's empty margins don't
+   block cursor-tilt/hover on the racket images beneath it — nothing inside
+   the hero text needs to be interactive. */
+.hero-container { position: relative; z-index: 1; width: 100%; pointer-events: none; }
 
 .hero-content {
-    max-width: 640px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
     opacity: 0;
     transform: translateY(22px);
     transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
@@ -405,7 +424,7 @@ body::after {
 .hero-headline {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: clamp(2.75rem, 7vw, 6rem);
+    font-size: clamp(2.5rem, 5.6vw, 4.75rem);
     line-height: 0.95;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -488,25 +507,35 @@ body::after {
     50% { transform: translateY(8px); opacity: 0.35; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hero {
         flex-direction: column;
         justify-content: center;
         padding-top: 4.5rem;
         padding-bottom: 3.5rem;
     }
-    .hero-media {
-        position: relative;
-        inset: auto;
+    .hero-media-row {
+        display: flex;
+        align-items: flex-end;
         justify-content: center;
-        padding-right: 0;
-        margin-bottom: 1.5rem;
+        gap: 1.25rem;
+        margin-bottom: 1.75rem;
     }
-    .hero-media-img { width: min(60vw, 270px); }
+    .hero-media-left, .hero-media-right {
+        position: static;
+        inset: auto;
+        padding: 0;
+        transform: none;
+    }
+    .hero-media-img-left, .hero-media-img-right { width: min(34vw, 240px); }
     .hero-content { max-width: 100%; text-align: center; }
     .hero-sub-text { margin-left: auto; margin-right: auto; margin-bottom: 1.25rem; }
-    .hero-headline { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: 1rem; }
+    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3.4rem); margin-bottom: 1rem; }
     .scroll-indicator { bottom: 1.25rem; }
+}
+
+@media (max-width: 520px) {
+    .hero-media-img-left, .hero-media-img-right { width: min(40vw, 190px); }
 }
 
 /* ==================== SECTION SHARED SYSTEM ==================== */
