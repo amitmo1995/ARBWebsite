@@ -25,16 +25,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
-        }
-    }
-    </script>
 </head>
 <body>
+
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-logo">
+            <img src="main_logo.png" alt="">
+        </div>
+        <div class="preloader-counter"><span id="preloaderCount">0</span>%</div>
+        <div class="preloader-bar"><span class="preloader-bar-fill" id="preloaderFill"></span></div>
+    </div>
+    <noscript><style>.preloader{display:none!important}.hero-content{opacity:1!important;transform:none!important}</style></noscript>
 
     <!-- ============ PRIVACY NOTICE BANNER ============ -->
     <div class="privacy-notice" id="privacyNotice" role="region" aria-label="Privacy notice">
@@ -72,38 +74,52 @@
     <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section id="home" class="home-splash">
-        <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
+    <section id="home" class="hero">
+        <div class="ambient-blobs" aria-hidden="true">
+            <span class="blob blob-a"></span>
+            <span class="blob blob-b"></span>
+            <span class="blob blob-c"></span>
         </div>
-        <div class="hero-hologram" id="heroHologram" aria-hidden="true">
-            <canvas id="hologramCanvas"></canvas>
+        <div class="hero-media" aria-hidden="true">
+            <img src="products/rackets/venom/Venom.png" alt="" class="hero-media-img">
         </div>
-        <div class="splash-particles">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-        </div>
-        <div class="splash-rings">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div>
-        </div>
-        <div class="splash-content">
-            <img src="Name_logo_capital_letters.png" alt="AURBON" class="splash-wordmark">
-            <div class="hero-headline-block">
-                <p class="hero-era-text">A NEW ERA OF PADEL IS COMING.</p>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-headline">
+                    <span class="hero-headline-line hero-headline-bright">A new era of padel</span>
+                    <span class="hero-headline-line hero-headline-dim text-gradient">is coming.</span>
+                </h1>
                 <p class="hero-sub-text">Engineered for performance. Designed to stand out.</p>
+                <div class="hero-coming-soon-pill">COMING SOON</div>
             </div>
-            <div class="hero-coming-soon-pill">COMING SOON</div>
         </div>
         <div class="scroll-indicator">
             <span>Scroll to explore</span>
             <div class="scroll-arrow"></div>
         </div>
     </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="filled">AURBON</span>
+            <span>CARBON&nbsp;3K</span>
+            <span class="filled">VENOM&nbsp;PRO</span>
+            <span>PRECISION</span>
+            <span class="filled">MAGNUS&nbsp;ELITE</span>
+            <span>POWER</span>
+            <span class="filled">COMING&nbsp;2026</span>
+            <span>CONTROL</span>
+            <span class="filled">AURBON</span>
+            <span>CARBON&nbsp;3K</span>
+            <span class="filled">VENOM&nbsp;PRO</span>
+            <span>PRECISION</span>
+            <span class="filled">MAGNUS&nbsp;ELITE</span>
+            <span>POWER</span>
+            <span class="filled">COMING&nbsp;2026</span>
+            <span>CONTROL</span>
+        </div>
+    </div>
 
     <!-- ============ YOU'RE EARLY ============ -->
     <section id="youre-early" class="section-youre-early">
@@ -324,88 +340,10 @@
         </div>
     </footer>
 
-    <!-- ============ CART MODAL (preserved for post-launch) ============ -->
-    <div class="cart-modal" id="cartModal" style="display:none!important">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2>Shopping Cart</h2>
-                <button class="close-cart" id="closeCart">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <div class="empty-cart">
-                    <p>Your cart is empty</p>
-                </div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span class="total-amount">$0</span>
-                </div>
-                <button class="btn btn-primary checkout-btn">Checkout</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============ PAYMENT MODAL (preserved for post-launch) ============ -->
-    <div class="payment-modal" id="paymentModal" style="display:none!important">
-        <div class="payment-overlay"></div>
-        <div class="payment-content">
-            <button class="close-payment" id="closePayment">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="payment-body">
-                <div class="payment-form-container">
-                    <form id="paymentForm" class="payment-form">
-                        <div class="form-group">
-                            <label for="cardNumber">Card Number</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
-                            <span class="error-message" id="cardNumberError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="cardName">Cardholder Name</label>
-                            <input type="text" id="cardName" placeholder="John Doe">
-                            <span class="error-message" id="cardNameError"></span>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cardExpiry">Expiry Date</label>
-                                <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
-                                <span class="error-message" id="cardExpiryError"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="cardCvv">CVV</label>
-                                <input type="text" id="cardCvv" placeholder="123" maxlength="4">
-                                <span class="error-message" id="cardCvvError"></span>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary payment-submit-btn">
-                            <span class="btn-text">Pay Now</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============ SUCCESS MODAL (preserved for post-launch) ============ -->
-    <div class="success-modal" id="successModal" style="display:none!important">
-        <div class="success-content">
-            <h2>Payment Successful!</h2>
-            <p>Your order has been confirmed.</p>
-            <div class="order-number">Order #<span id="orderNumber"></span></div>
-            <button class="btn btn-primary" onclick="closeSuccessModal()">Continue</button>
-        </div>
-    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <script src="script.js"></script>
-<script type="module" src="hologram.js"></script>
 </body>
 </html>

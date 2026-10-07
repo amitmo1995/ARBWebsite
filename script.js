@@ -1,7 +1,3 @@
-// ==================== GLOBAL STATE ====================
-let cart = [];
-let cartCount = 0;
-
 // ==================== NAVBAR SCROLL EFFECT ====================
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -9,89 +5,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 100);
     }
 });
-
-// ==================== CART FUNCTIONALITY (preserved for post-launch) ====================
-const cartModal    = document.getElementById('cartModal');
-const cartBtn      = document.getElementById('cartBtn');
-const closeCartBtn = document.getElementById('closeCart');
-const cartItemsEl  = document.getElementById('cartItems');
-const cartCountEl  = document.querySelector('.cart-count');
-
-if (cartBtn) {
-    cartBtn.addEventListener('click', () => {
-        if (cartModal) { cartModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    });
-}
-if (closeCartBtn) {
-    closeCartBtn.addEventListener('click', () => {
-        if (cartModal) { cartModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-    });
-}
-if (cartModal) {
-    cartModal.addEventListener('click', e => {
-        if (e.target === cartModal) { cartModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-    });
-}
-
-function addToCart(name, price) {
-    const existing = cart.find(i => i.name === name);
-    if (existing) { existing.quantity++; } else { cart.push({ name, price, quantity: 1 }); }
-    updateCart();
-}
-
-function updateCart() {
-    cartCount = cart.reduce((t, i) => t + i.quantity, 0);
-    if (cartCountEl) cartCountEl.textContent = cartCount;
-    const totalEl = document.querySelector('.total-amount');
-    if (totalEl) totalEl.textContent = '$' + cart.reduce((s, i) => s + i.price * i.quantity, 0);
-}
-
-function increaseQuantity(name) { const i = cart.find(i => i.name === name); if (i) { i.quantity++; updateCart(); } }
-function decreaseQuantity(name) { const i = cart.find(i => i.name === name); if (i && i.quantity > 1) { i.quantity--; updateCart(); } }
-function removeFromCart(name) { cart = cart.filter(i => i.name !== name); updateCart(); }
-
-// ==================== PAYMENT MODAL (preserved for post-launch) ====================
-const paymentModal  = document.getElementById('paymentModal');
-const closePayBtn   = document.getElementById('closePayment');
-const successModal  = document.getElementById('successModal');
-const paymentForm   = document.getElementById('paymentForm');
-const checkoutBtn   = document.querySelector('.checkout-btn');
-const payOverlay    = document.querySelector('.payment-overlay');
-
-if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) return;
-        if (paymentModal) { paymentModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        if (cartModal) cartModal.classList.remove('active');
-    });
-}
-if (closePayBtn) {
-    closePayBtn.addEventListener('click', () => {
-        if (paymentModal) { paymentModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-    });
-}
-if (payOverlay) {
-    payOverlay.addEventListener('click', () => {
-        if (paymentModal) { paymentModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-    });
-}
-if (paymentForm) {
-    paymentForm.addEventListener('submit', e => { e.preventDefault(); });
-}
-
-function closeSuccessModal() {
-    if (successModal) { successModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-}
-
-// ==================== NOTIFICATION SYSTEM ====================
-function showNotification(message) {
-    const n = document.createElement('div');
-    n.className = 'notification';
-    n.textContent = message;
-    n.style.cssText = 'position:fixed;top:100px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:1rem 2rem;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.3);z-index:10000;font-weight:600;';
-    document.body.appendChild(n);
-    setTimeout(() => n.remove(), 2300);
-}
 
 // ==================== PRIVACY NOTICE BANNER ====================
 (function () {
@@ -111,49 +24,6 @@ function showNotification(message) {
     }
 })();
 
-
-// ==================== PRODUCT TABS ====================
-document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        const tab = document.getElementById('tab-' + btn.dataset.tab);
-        if (tab) tab.classList.add('active');
-    });
-});
-
-// ==================== PRODUCT CAROUSEL ====================
-function carouselMove(id, dir) {
-    const carousel = document.getElementById(id);
-    if (!carousel) return;
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const dots   = carousel.querySelectorAll('.carousel-dot');
-    let current  = [...slides].findIndex(s => s.classList.contains('active'));
-    const next   = (current + dir + slides.length) % slides.length;
-
-    slides[current].classList.add(dir > 0 ? 'slide-out-left' : 'slide-out-right');
-    slides[next].classList.add(dir > 0 ? 'slide-in-right' : 'slide-in-left');
-    slides[next].classList.add('active');
-
-    setTimeout(() => {
-        slides[current].classList.remove('active', 'slide-out-left', 'slide-out-right');
-        slides[next].classList.remove('slide-in-right', 'slide-in-left');
-        if (dots[current]) dots[current].classList.remove('active');
-        if (dots[next])    dots[next].classList.add('active');
-    }, 320);
-}
-
-// Touch swipe support
-document.querySelectorAll('.product-carousel').forEach(carousel => {
-    let startX = 0;
-    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    carousel.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) carouselMove(carousel.id, diff > 0 ? 1 : -1);
-    }, { passive: true });
-});
-
 // ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -165,37 +35,215 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ==================== INTERSECTION OBSERVER (fade-in) ====================
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+const isFinePointer = window.matchMedia('(pointer: fine)').matches && window.innerWidth > 900;
+
+// ==================== KINETIC HERO HEADLINE SPLIT ====================
+// Split the bright headline line into per-word spans so the CSS mask-reveal
+// (.kinetic-word / .kinetic-word-inner) has something to animate. Runs
+// before the preloader hands off so the spans exist from the first paint.
+(function splitHeroHeadline() {
+    const el = document.querySelector('.hero-headline-bright');
+    if (!el) return;
+    const words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = words.map((w, i) =>
+        `<span class="kinetic-word"><span class="kinetic-word-inner" style="--d:${i * 70}ms">${w}</span></span>`
+    ).join(' ');
+})();
+
+// ==================== PRELOADER ====================
+// A brief counted intro before the hero reveals itself — the hero's entrance
+// (including the kinetic headline) is triggered the moment the preloader
+// finishes, so the two feel like one coordinated moment rather than a veil
+// lifting on a page that then separately fades in.
+(function preloaderSequence() {
+    const preloader = document.getElementById('preloader');
+    const heroContent = document.querySelector('.hero-content');
+
+    function revealHero() {
+        if (heroContent) heroContent.classList.add('in-view');
+    }
+
+    if (!preloader) { revealHero(); return; }
+
+    if (reduceMotion) {
+        preloader.classList.add('done');
+        revealHero();
+        return;
+    }
+
+    document.body.style.overflow = 'hidden';
+    const countEl = document.getElementById('preloaderCount');
+    const fillEl = document.getElementById('preloaderFill');
+    const duration = 1000;
+    const start = performance.now();
+
+    function finish() {
+        preloader.classList.add('done');
+        document.body.style.overflow = '';
+        revealHero();
+    }
+
+    function tick(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const pct = Math.round(t * 100);
+        if (countEl) countEl.textContent = pct;
+        if (fillEl) fillEl.style.width = pct + '%';
+        if (t < 1) {
+            requestAnimationFrame(tick);
+        } else {
+            finish();
         }
+    }
+    requestAnimationFrame(tick);
+
+    // Safety net: never let a stalled tab leave the preloader stuck forever.
+    setTimeout(finish, 2500);
+})();
+
+// ==================== SCROLL REVEAL ====================
+if (!reduceMotion) {
+    const revealEls = document.querySelectorAll(
+        '.perf-card, .racket-showcase-row, .youre-early-inner, .testing-inner, .design-inner, .story-content, .launch-inner'
+    );
+    revealEls.forEach(el => el.classList.add('reveal'));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// ==================== PARALLAX + CURSOR TILT ====================
+// Subtle depth parallax and 3D cursor-tilt on the hero and showcase product
+// shots — desktop/tablet only (disabled on mobile and whenever
+// prefers-reduced-motion is set, since a scroll-coupled transform is exactly
+// the kind of thing that feels janky on a weaker mobile GPU). Parallax
+// (translateY) and tilt (rotateX/rotateY) share a small state object per
+// image so both can drive the same transform without clobbering each other.
+if (!reduceMotion && !isMobileViewport) {
+    const heroImg = document.querySelector('.hero-media-img');
+    const showcaseImgs = Array.from(document.querySelectorAll('.racket-showcase-img'));
+    const tiltTargets = [heroImg, ...showcaseImgs].filter(Boolean);
+
+    const tiltState = new Map();
+    tiltTargets.forEach(el => tiltState.set(el, { ty: 0, rx: 0, ry: 0 }));
+
+    function applyTransform(el) {
+        const s = tiltState.get(el);
+        el.style.transform = `translateY(${s.ty}px) rotateX(${s.rx}deg) rotateY(${s.ry}deg)`;
+    }
+
+    let ticking = false;
+    function onScrollParallax() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const y = window.scrollY;
+
+            if (heroImg) {
+                tiltState.get(heroImg).ty = y * 0.12;
+                applyTransform(heroImg);
+            }
+
+            showcaseImgs.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                    tiltState.get(img).ty = (progress - 0.5) * 36;
+                    applyTransform(img);
+                }
+            });
+
+            ticking = false;
+        });
+    }
+    window.addEventListener('scroll', onScrollParallax, { passive: true });
+
+    if (isFinePointer) {
+        tiltTargets.forEach(el => {
+            const wrap = el.closest('.hero-media, .racket-showcase-img-wrap') || el.parentElement;
+            wrap.addEventListener('mousemove', (e) => {
+                const rect = wrap.getBoundingClientRect();
+                const px = (e.clientX - rect.left) / rect.width - 0.5;
+                const py = (e.clientY - rect.top) / rect.height - 0.5;
+                const s = tiltState.get(el);
+                s.rx = py * -8;
+                s.ry = px * 10;
+                applyTransform(el);
+            });
+            wrap.addEventListener('mouseleave', () => {
+                const s = tiltState.get(el);
+                s.rx = 0;
+                s.ry = 0;
+                applyTransform(el);
+            });
+        });
+    }
+}
+
+// ==================== CUSTOM CURSOR (dot + trailing ring + ambient glow) ====================
+if (!reduceMotion && isFinePointer) {
+    document.body.classList.add('custom-cursor-active');
+
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    const glow = document.getElementById('cursorGlow');
+
+    let mouseX = -100, mouseY = -100;
+    let ringX = -100, ringY = -100;
+    let hasMoved = false;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        hasMoved = true;
+        if (dot) {
+            dot.style.setProperty('--cx', mouseX + 'px');
+            dot.style.setProperty('--cy', mouseY + 'px');
+        }
+        if (glow) {
+            glow.style.setProperty('--cx', mouseX + 'px');
+            glow.style.setProperty('--cy', mouseY + 'px');
+            glow.classList.add('active');
+        }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => { if (glow) glow.classList.remove('active'); });
+
+    function lerpRing() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        if (ring && hasMoved) {
+            ring.style.setProperty('--rx', ringX + 'px');
+            ring.style.setProperty('--ry', ringY + 'px');
+        }
+        requestAnimationFrame(lerpRing);
+    }
+    requestAnimationFrame(lerpRing);
+
+    document.querySelectorAll('a, button, .perf-card, .racket-showcase-img-wrap').forEach(el => {
+        el.addEventListener('mouseenter', () => { if (ring) ring.classList.add('hover'); });
+        el.addEventListener('mouseleave', () => { if (ring) ring.classList.remove('hover'); });
     });
-}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+}
 
-document.querySelectorAll(
-    '.perf-card, .racket-showcase-row, .youre-early-inner, .testing-inner, .design-inner, .story-content, .launch-inner'
-).forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-    observer.observe(el);
-});
-
-// ==================== KEYBOARD ESC ====================
-document.addEventListener('keydown', e => {
-    if (e.key !== 'Escape') return;
-    if (successModal && successModal.classList.contains('active')) closeSuccessModal();
-    else if (paymentModal && paymentModal.classList.contains('active')) { paymentModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-    else if (cartModal && cartModal.classList.contains('active')) { cartModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-});
-
-// ==================== PAGE LOAD FADE ====================
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => { document.body.style.opacity = '1'; }, 80);
-});
+// ==================== MAGNETIC BUTTONS ====================
+if (!reduceMotion && isFinePointer) {
+    document.querySelectorAll('.btn-primary, .btn-nav-launch--primary').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * 0.22}px, ${y * 0.22 - 3}px) scale(1.03)`;
+        });
+        el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+}
