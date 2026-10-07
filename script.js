@@ -53,10 +53,12 @@ const isFinePointer = window.matchMedia('(pointer: fine)').matches && window.inn
 })();
 
 // ==================== PRELOADER ====================
-// A brief counted intro before the hero reveals itself — the hero's entrance
-// (including the kinetic headline) is triggered the moment the preloader
-// finishes, so the two feel like one coordinated moment rather than a veil
-// lifting on a page that then separately fades in.
+// A brief intro before the hero reveals itself: the signature mark draws
+// itself on stroke by stroke (like it's being painted), timed alongside a
+// percentage counter. The hero's entrance (including the kinetic headline)
+// triggers the moment the preloader finishes, so the two feel like one
+// coordinated moment rather than a veil lifting on a page that then
+// separately fades in.
 (function preloaderSequence() {
     const preloader = document.getElementById('preloader');
     const heroContent = document.querySelector('.hero-content');
@@ -76,8 +78,34 @@ const isFinePointer = window.matchMedia('(pointer: fine)').matches && window.inn
     document.body.style.overflow = 'hidden';
     const countEl = document.getElementById('preloaderCount');
     const fillEl = document.getElementById('preloaderFill');
-    const duration = 1000;
+    const duration = 1700;
     const start = performance.now();
+
+    // Draw the signature: each path gets a dasharray/dashoffset equal to its
+    // own length, then they're animated to 0 in sequence (delay/duration
+    // proportional to each path's share of the total ink), so it reads as
+    // one continuous pen stroke rather than several pieces popping in at once.
+    const sigSvg = document.getElementById('preloaderSignature');
+    if (sigSvg) {
+        const paths = Array.from(sigSvg.querySelectorAll('path'));
+        const lengths = paths.map(p => p.getTotalLength());
+        const totalLength = lengths.reduce((a, b) => a + b, 0) || 1;
+        let cumulative = 0;
+        paths.forEach((p, i) => {
+            const len = lengths[i];
+            p.style.strokeDasharray = String(len);
+            p.style.strokeDashoffset = String(len);
+            const delay = (cumulative / totalLength) * duration;
+            const segDuration = Math.max(90, (len / totalLength) * duration);
+            p.style.transition = `stroke-dashoffset ${segDuration}ms ease-out ${delay}ms`;
+            cumulative += len;
+        });
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                paths.forEach(p => { p.style.strokeDashoffset = '0'; });
+            });
+        });
+    }
 
     function finish() {
         preloader.classList.add('done');
@@ -99,8 +127,36 @@ const isFinePointer = window.matchMedia('(pointer: fine)').matches && window.inn
     requestAnimationFrame(tick);
 
     // Safety net: never let a stalled tab leave the preloader stuck forever.
-    setTimeout(finish, 2500);
+    setTimeout(finish, 3200);
 })();
+
+// ==================== SNOW LOGOS ====================
+// Small brand marks drifting down through the hero like snow. Generated
+// once at load (desktop/mobile get different counts), gated out entirely
+// under prefers-reduced-motion (handled in CSS, but skip the DOM work too).
+if (!reduceMotion) {
+    const snowContainer = document.getElementById('snowLogos');
+    if (snowContainer) {
+        const count = isMobileViewport ? 10 : 22;
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < count; i++) {
+            const img = document.createElement('img');
+            img.src = 'main_logo.png';
+            img.alt = '';
+            img.className = 'snow-logo';
+            const size = 12 + Math.random() * 22;
+            img.style.setProperty('--sx', (Math.random() * 100) + '%');
+            img.style.setProperty('--size', size + 'px');
+            img.style.setProperty('--dur', (11 + Math.random() * 12) + 's');
+            img.style.setProperty('--delay', (-Math.random() * 20) + 's');
+            img.style.setProperty('--drift', (Math.random() * 90 - 45) + 'px');
+            img.style.setProperty('--spin', (Math.random() * 300 - 150) + 'deg');
+            img.style.setProperty('--peak', (0.25 + Math.random() * 0.35).toFixed(2));
+            frag.appendChild(img);
+        }
+        snowContainer.appendChild(frag);
+    }
+}
 
 // ==================== SCROLL REVEAL ====================
 if (!reduceMotion) {
