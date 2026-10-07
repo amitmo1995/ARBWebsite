@@ -300,8 +300,21 @@ body::after {
 }
 
 .logo-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-.logo-icon { height: 32px; width: auto; }
+.logo-icon {
+    height: 32px;
+    width: auto;
+    animation: logoLive 5s ease-in-out infinite;
+    transition: transform 0.45s var(--ease);
+}
+.logo-link:hover .logo-icon { transform: scale(1.15) rotate(-10deg); }
 .logo-name { height: 26px; width: auto; }
+
+/* The brand mark's gradient subtly cycles through the accent palette and
+   breathes a soft glow — the one place the logo itself feels "alive". */
+@keyframes logoLive {
+    0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 0px rgba(138, 92, 255, 0)); }
+    50% { filter: hue-rotate(55deg) drop-shadow(0 0 12px rgba(138, 92, 255, 0.5)); }
+}
 
 .nav-links { display: flex; list-style: none; gap: 2rem; }
 .nav-links a {
@@ -382,7 +395,6 @@ body::after {
     display: flex;
     align-items: center;
     z-index: 0;
-    perspective: 1200px;
     pointer-events: none;
 }
 .hero-media-left { justify-content: flex-start; padding-left: 2.5vw; transform: translateY(-3%); }
@@ -391,10 +403,7 @@ body::after {
 .hero-media-img {
     height: auto;
     object-fit: contain;
-    transform-style: preserve-3d;
-    transition: transform 0.4s var(--ease);
     will-change: transform;
-    pointer-events: auto;
 }
 .hero-media-img-left {
     width: clamp(220px, 25vw, 400px);
@@ -727,19 +736,13 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1200px;
 }
 .racket-showcase-img {
     width: clamp(300px, 34vw, 560px);
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 40px 90px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 90px rgba(138, 92, 255, 0.15));
-    transform-style: preserve-3d;
-    transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
     will-change: transform;
-}
-.racket-showcase-img-wrap:hover .racket-showcase-img {
-    filter: drop-shadow(0 50px 110px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 130px rgba(138, 92, 255, 0.3));
 }
 
 .racket-showcase-info { max-width: 440px; }
@@ -944,7 +947,12 @@ body::after {
 .footer-main { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem; padding-bottom: var(--space-4); }
 .footer-brand-block { max-width: 320px; }
 .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-.footer-logo-icon { height: 28px; width: auto; }
+.footer-logo-icon {
+    height: 28px;
+    width: auto;
+    animation: logoLive 5s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
 .footer-signature { height: 24px; width: auto; }
 .footer-tagline { color: var(--ink-25); font-size: 0.85rem; line-height: 1.6; }
 
@@ -1003,6 +1011,9 @@ body::after {
 }
 @media (prefers-reduced-motion: reduce) {
     .cursor-glow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .logo-icon, .footer-logo-icon { animation: none; }
 }
 
 /* ==================== RESPONSIVE ==================== */

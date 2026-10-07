@@ -121,25 +121,15 @@ if (!reduceMotion) {
     revealEls.forEach(el => revealObserver.observe(el));
 }
 
-// ==================== PARALLAX + CURSOR TILT ====================
-// Subtle depth parallax and 3D cursor-tilt on the hero and showcase product
-// shots — desktop/tablet only (disabled on mobile and whenever
-// prefers-reduced-motion is set, since a scroll-coupled transform is exactly
-// the kind of thing that feels janky on a weaker mobile GPU). Parallax
-// (translateY) and tilt (rotateX/rotateY) share a small state object per
-// image so both can drive the same transform without clobbering each other.
+// ==================== SCROLL PARALLAX ====================
+// Subtle depth parallax on the hero and showcase product shots — desktop/
+// tablet only (disabled on mobile and whenever prefers-reduced-motion is
+// set, since a scroll-coupled transform is exactly the kind of thing that
+// feels janky on a weaker mobile GPU). No hover/tilt interaction on the
+// racket images — scroll position is the only thing driving their transform.
 if (!reduceMotion && !isMobileViewport) {
     const heroImgs = Array.from(document.querySelectorAll('.hero-media-img'));
     const showcaseImgs = Array.from(document.querySelectorAll('.racket-showcase-img'));
-    const tiltTargets = [...heroImgs, ...showcaseImgs].filter(Boolean);
-
-    const tiltState = new Map();
-    tiltTargets.forEach(el => tiltState.set(el, { ty: 0, rx: 0, ry: 0 }));
-
-    function applyTransform(el) {
-        const s = tiltState.get(el);
-        el.style.transform = `translateY(${s.ty}px) rotateX(${s.rx}deg) rotateY(${s.ry}deg)`;
-    }
 
     let ticking = false;
     function onScrollParallax() {
@@ -150,16 +140,14 @@ if (!reduceMotion && !isMobileViewport) {
 
             heroImgs.forEach(img => {
                 const factor = img.classList.contains('hero-media-img-left') ? 0.07 : 0.12;
-                tiltState.get(img).ty = y * factor;
-                applyTransform(img);
+                img.style.transform = `translateY(${y * factor}px)`;
             });
 
             showcaseImgs.forEach(img => {
                 const rect = img.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
                     const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                    tiltState.get(img).ty = (progress - 0.5) * 36;
-                    applyTransform(img);
+                    img.style.transform = `translateY(${(progress - 0.5) * 36}px)`;
                 }
             });
 
@@ -167,27 +155,6 @@ if (!reduceMotion && !isMobileViewport) {
         });
     }
     window.addEventListener('scroll', onScrollParallax, { passive: true });
-
-    if (isFinePointer) {
-        tiltTargets.forEach(el => {
-            const wrap = el.closest('.hero-media, .racket-showcase-img-wrap') || el.parentElement;
-            wrap.addEventListener('mousemove', (e) => {
-                const rect = wrap.getBoundingClientRect();
-                const px = (e.clientX - rect.left) / rect.width - 0.5;
-                const py = (e.clientY - rect.top) / rect.height - 0.5;
-                const s = tiltState.get(el);
-                s.rx = py * -8;
-                s.ry = px * 10;
-                applyTransform(el);
-            });
-            wrap.addEventListener('mouseleave', () => {
-                const s = tiltState.get(el);
-                s.rx = 0;
-                s.ry = 0;
-                applyTransform(el);
-            });
-        });
-    }
 }
 
 // ==================== CUSTOM CURSOR (dot + trailing ring + ambient glow) ====================
